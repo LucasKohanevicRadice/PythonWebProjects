@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block title %} spellChecker {% endblock %}
+
+{%block content%}
+
+<form action="" method="POST">
+    <h3 align="center">Spell checker</h3>
+
+    <div class="form-group">
+        <label for="sentence">Check your spelling</label>
+        <input 
+            type="text" 
+            class="form-control" 
+            id="sentence" 
+            name="sentence" 
+            placeholder="Enter your sentence"
+            />
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Submit your sentence</button>
+    <br><br>
+</form>
+
+
+{% if spelling_form_data["false_words"] %}
+
+<ul class="list-group list-group-flush">
+
+<li class="list-group-item">
+    <h5>Your sentence:</h5>
+    <!-- <p><span style="color:green">{{ spelling_form_data["highlighted_sentence"]|safe }}</span></p> -->
+    <p>{{ spelling_form_data["highlighted_sentence"]|safe }}</p>
+    <br>
+</li>
+
+
+<li class="list-group-item">
+    <h5>False words:</h5> 
+
+    {% for item in spelling_form_data["false_words"]%}
+    
+    <p><span style="color:red">{{item}}</span> </p>
+    
+    {% endfor %}
+</li>
+
+<li class="list-group-item">
+    <h5>Recommended words:</h5>
+
+    {% for item in spelling_form_data["recommendations"] %}
+    
+    {{item}} <br><br>
+    
+    {% endfor %}
+</li>
+</ul>
+
+{% else %}
+
+<ul class="list-group list-group-flush">
+
+    <li class="list-group-item">
+        <h5>Your sentence:</h5>
+        <p><span style="color:green">{{ spelling_form_data["highlighted_sentence"]|safe }}</span></p>
+        <br>
+    </li>
+    
+    
+    <li class="list-group-item">
+        <h5>False words:</h5> 
+    
+        {% for item in spelling_form_data["false_words"]%}
+        
+        <p><span style="color:red">{{item}}</span> </p>
+        
+        {% endfor %}
+    </li>
+    
+    <li class="list-group-item">
+        <h5>Recommended words:</h5>
+    
+        {% for item in spelling_form_data["recommendations"] %}
+        
+        {{item}} <br><br>
+        
+        {% endfor %}
+    </li>
+    </ul>
+
+{% endif %}
+{% endblock %}
+
