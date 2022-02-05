@@ -1,7 +1,6 @@
 from difflib import get_close_matches
 import string
 
-from sqlalchemy import false
 
 def spellChecker(form_data):
 
