@@ -7,6 +7,11 @@ views = Blueprint('views', __name__)
 
 sentence_dic = {}
 
+@views.route("/", methods=["GET"])
+def home():
+
+    return render_template("home.html")
+
 @views.route('/spellChecker', methods=["GET", "POST"])
 def spellChecker_page():
 
@@ -22,12 +27,5 @@ def spellChecker_page():
         print(sentence)
         sentence_dic = spellChecker(sentence)
         return redirect(url_for("views.spellChecker_page"))
-        # return render_template("spellChecker.html", spelling_form_data = sentence_dic )
 
-
-
-@views.route("/", methods=["GET"])
-def home():
-
-    return render_template("home.html")
 
