@@ -1,7 +1,6 @@
 from string import printable
 from flask import Blueprint, flash, render_template, request, jsonify, redirect, url_for
 from .spellChecker import spellChecker
-from .variables import spellChecker_dic
 
 views = Blueprint('views', __name__)
 
