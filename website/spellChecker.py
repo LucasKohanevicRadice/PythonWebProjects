@@ -18,7 +18,7 @@ def spellChecker(form_data):
     } 
 
     # Open wordlist.txt and add the words to a list
-    with open("website\wordlist.txt") as file: 
+    with open("website/wordlist.txt") as file: 
 
         for row in file:
             row = row.strip()
