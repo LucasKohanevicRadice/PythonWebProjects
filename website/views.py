@@ -15,7 +15,8 @@ def spellChecker_page():
     elif request.method == "POST":
         sentence = request.form.get("sentence")
         sentence_dic = spellChecker(sentence)
-        return render_template("spellChecker.html", spelling_form_data = sentence_dic )
+        return redirect(url_for("spellChecker_page"))
+        # return render_template("spellChecker.html", spelling_form_data = sentence_dic )
 
 
 
