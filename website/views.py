@@ -11,6 +11,12 @@ def home():
 
     return render_template("home.html")
 
+@views.route("/monsterMash", methods=["GET"])
+def monsterMash_page():
+
+    if request.method == "GET":
+        return render_template("monsterMash.html")
+
 @views.route('/spellChecker', methods=["GET", "POST"])
 def spellChecker_page():
 

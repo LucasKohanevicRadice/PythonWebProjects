@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3 align="center">MonsterMash</h3>
+<p align="center"> 
+    <strong>    
+        Below is a video of my pyGame project I call monsterMash.<br>
+        I would've loved to upload it here as a playable version, but unfortunately pyGame doesn't support web functionalities just yet.. <br> 
+        Anyway the core functionality is visible from the video and there's also a link to the source code under the video! </strong>
+ </p>
+
+ <br><br>
+
+<div>
+    <video align="center" src="{{url_for('static', filename='monstamäsh_2.mp4')}}" controls="controls" poster="{{url_for('static', filename='monstamash_poster2.png')}}" id="python_monstermash_video"></video>
+</div>
+
+<h3 align="center">The source code for this can be found from the link below:</h3>
+
+{% endblock %}

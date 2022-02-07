@@ -16,6 +16,10 @@
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       crossorigin="anonymous"
     />
+
+    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}"/>
+
+
         <title>{% block title %} My python apps {% endblock %}</title>
     </head>
 
@@ -30,6 +34,7 @@
                 <div class="navbar-nav">
                         <a href="/" class="nav-item nav-link" id="home" style="color:white">All projects</a>
                         <a href="/spellChecker" class="nav-item nav-link" id="spellChecker" style="color:white">spellChecker</a>
+                        <a href="/monsterMash" class="nav-item nav-link" id="spellChecker" style="color:white">monsterMash</a>
                 </div>
             </div>
         </nav>
